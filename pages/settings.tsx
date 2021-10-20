@@ -35,11 +35,11 @@ const Settings: NextPage = () => {
 
   useEffect(() => {
     localStorage.setItem("TonicSpinnerSettings", JSON.stringify(state));
-  }, [state]);
+  }, [state.spinnerSpped, state.spinnerDuration, state.ease]);
 
   return (
     <PageWrapper>
-      {/* <div className="text-4xl">Settings</div>
+      <div className="text-4xl">Settings</div>
       <div className="settings__container mt-10">
         <div className="mb-4 flex items-center ">
           <div className="text-gray-300 w-32 ">Spinner Speed</div>
@@ -81,7 +81,7 @@ const Settings: NextPage = () => {
             <option value="none">None</option>
           </select>
         </div>
-      </div> */}
+      </div>
     </PageWrapper>
   );
 };

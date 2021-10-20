@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 const boxDimensions = {
   width: "250px",
   height: "50px",
-  // border: "1px solid teal",
 };
 
 interface SpinnerBoxProps {
@@ -12,11 +11,7 @@ interface SpinnerBoxProps {
   whoHasGoneArray: any[];
 }
 
-export const SpinnerBox = ({
-  name,
-  currentName,
-  whoHasGoneArray,
-}: SpinnerBoxProps) => {
+export const SpinnerBox = ({ name, whoHasGoneArray }: SpinnerBoxProps) => {
   const [hasNameBeenCalled, setHasNameBeenCalled] = useState<boolean>(false);
 
   useEffect(() => {
@@ -29,9 +24,7 @@ export const SpinnerBox = ({
   return (
     <div
       className={`box absolute z-10 border-r-2 border-l-2 border-white border-opacity-50  text-gray-300 font-light text-2xl flex items-center justify-center 
-      ${hasNameBeenCalled ? "line-through" : ""}
-      
-      `}
+      ${hasNameBeenCalled ? "line-through" : ""} `}
       style={boxDimensions}
     >
       {name}
