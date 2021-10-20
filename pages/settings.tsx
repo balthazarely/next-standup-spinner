@@ -39,7 +39,7 @@ const Settings: NextPage = () => {
 
   return (
     <PageWrapper>
-      <div className="text-4xl">Settings</div>
+      {/* <div className="text-4xl">Settings</div>
       <div className="settings__container mt-10">
         <div className="mb-4 flex items-center ">
           <div className="text-gray-300 w-32 ">Spinner Speed</div>
@@ -77,11 +77,11 @@ const Settings: NextPage = () => {
             className="select select-bordered w-28 max-w-xs ml-3"
           >
             <option value="power4.inOut">Normal</option>
-            <option value="back.inOut(0.7)">Snappy</option>
+            <option value="back.inOut(0.5)">Snappy</option>
             <option value="none">None</option>
           </select>
         </div>
-      </div>
+      </div> */}
     </PageWrapper>
   );
 };
