@@ -131,7 +131,10 @@ export const SpinnerWrapper = () => {
     <div className="">
       <div className=" md:flex-row flex-col flex gap-10  ">
         <div className="flex-1 w-full h-full ">
-          <SpinnerBtn nextButtonClick={nextButtonClick} />
+          <SpinnerBtn
+            nextButtonClick={nextButtonClick}
+            isSpinning={isSpinning}
+          />
         </div>
         <div className="flex-1 w-full h-full "> </div>
       </div>
