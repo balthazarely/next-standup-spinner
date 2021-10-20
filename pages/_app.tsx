@@ -6,10 +6,10 @@ import { Navbar } from "../src/components/Navigation/Navbar";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    // <Layout>
-    //   <Navbar />
-    <Component {...pageProps} />
-    // </Layout>
+    <Layout>
+      <Navbar />
+      <Component {...pageProps} />
+    </Layout>
   );
 }
 export default MyApp;
