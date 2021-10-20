@@ -6,7 +6,8 @@ import { SpinnerWrapper } from "../src/components/Spinner/SpinnerWrapper";
 const Spinner: NextPage = () => {
   return (
     <PageWrapper>
-      <SpinnerWrapper />
+      hi
+      {/* <SpinnerWrapper /> */}
     </PageWrapper>
   );
 };
