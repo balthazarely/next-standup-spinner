@@ -24,7 +24,7 @@ export const SpinnerInfo = ({
   gameOver,
 }: InfoPannelProps) => {
   return (
-    <div className="text-5xl flex-1 text-white font-extrabold  -mt-12 ">
+    <div className="text-5xl flex-1 text-white font-extrabold  md:-mt-12 mt-12 ">
       <div className="">
         <div
           className="text-base font-light text-white mb-1 pl-1"
