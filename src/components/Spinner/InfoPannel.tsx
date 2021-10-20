@@ -5,8 +5,6 @@ interface InfoPannelProps {
   isSpinning: boolean;
   gameActive: boolean;
   currentName: string;
-  nextButtonClick: () => void;
-  whoHasGoneArray: string[];
   nameArray: string[];
 }
 
@@ -14,21 +12,12 @@ export const InfoPannel = ({
   isSpinning,
   gameActive,
   currentName,
-  nextButtonClick,
-  whoHasGoneArray,
   nameArray,
 }: InfoPannelProps) => {
   return (
-    <div className="text-5xl flex-1 text-white font-extrabold text-center border-red-400 border-2 ">
-      <div className="current__name__wrapper h-24  flex items-center justify-center">
-        {!isSpinning && gameActive && (
-          <div className="current__name">{currentName}</div>
-        )}
-      </div>
-      <div className="flex justify-center">
-        <SpinnerBtn nextButtonClick={nextButtonClick} />
-      </div>
+    <div className=" flex-1 text-white  ">
       <div className="mt-10">
+        <div className="current__name">{currentName}</div>
         <div className="text-lg text-white">
           is game active:{" "}
           <span className="text-yellow-400">
@@ -46,12 +35,6 @@ export const InfoPannel = ({
           remaining people:{" "}
           <span className="text-yellow-400">{nameArray.length}</span>
         </div>
-        <div className="text-lg text-white font-black mt-5">Who Has Gone</div>
-        {whoHasGoneArray.map((name) => (
-          <div className="text-sm text-yellow-400" key={name}>
-            {name}
-          </div>
-        ))}
       </div>
     </div>
   );

@@ -1,24 +1,28 @@
 import React from "react";
 import DarkModeBtn from "../../hooks/useDarkMode";
+import Link from "next/link";
 import { HiOutlineCog, HiOutlineShare } from "react-icons/hi";
 
 export const Navbar = () => {
   return (
-    <div className="w-100 sm:h-24 h-20 dark:bg-tonic-light bg-tonic-grey transition-all duration-200">
-      <div className="container mx-auto flex justify-between px-2 sm:px-0">
-        <img
-          src="/tonic-logo.png"
-          alt="tonic__logo"
-          className=" pt-3 md:w-32 w-28"
-        />
-        <div className="sm:h-24 h-20 flex gap-3 items-center pt-12 text-tonic-base">
-          <div data-tip="share" className="tooltip ">
-            <HiOutlineShare className="text-tonic-base text-3xl " />
+    <div className="w-100 h-20  dark:bg-tonic-light bg-tonic-grey transition-all duration-200 ">
+      <div className="container mx-auto flex justify-between px-4 ">
+        <Link href="/spinner">
+          <div className="logo text-black w-24 pt-5 cursor-pointer">
+            <img src="/tonic-logo.png" alt="tonic__logo" className=" " />
           </div>
-          <div data-tip="edit" className="tooltip ">
-            <HiOutlineCog className="text-tonic-base text-3xl" />
-          </div>
-          <DarkModeBtn />
+        </Link>
+        <div className="flex gap-2 mb-1 items-center text-tonic-base">
+          <Link href="/spinner">
+            <div className="text-tonic-base text-xl font-bold cursor-pointer">
+              Spinner
+            </div>
+          </Link>
+          <HiOutlineShare className="text-tonic-base text-3xl cursor-pointer " />
+          <Link href="/settings">
+            <HiOutlineCog className="text-tonic-base text-3xl cursor-pointer" />
+          </Link>
+          {/* <DarkModeBtn /> */}
         </div>
       </div>
     </div>

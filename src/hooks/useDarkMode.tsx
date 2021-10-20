@@ -6,7 +6,11 @@ const DarkModeBtn = () => {
 
   useEffect(() => {
     const storedData = localStorage.getItem("tonicDarkMode");
-    setDarkMode(storedData === "true" ? true : false);
+    if (storedData) {
+      setDarkMode(storedData === "true" ? true : false);
+    } else {
+      setDarkMode(true);
+    }
   }, []);
 
   useEffect(() => {
@@ -24,7 +28,8 @@ const DarkModeBtn = () => {
   };
 
   return (
-    <div data-tip="dark mode" className="tooltip ">
+    // <div data-tip="dark mode" className="tooltip">
+    <>
       <button onClick={onClick}>
         {darkMode ? (
           <HiLightBulb className="text-tonic-base text-3xl" />
@@ -32,7 +37,8 @@ const DarkModeBtn = () => {
           <HiOutlineMoon className="text-tonic-base text-3xl" />
         )}
       </button>
-    </div>
+      {darkMode ? "dark" : "light"}
+    </>
   );
 };
 

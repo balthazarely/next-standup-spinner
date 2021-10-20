@@ -1,6 +1,6 @@
 module.exports = {
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
-  darkMode: "class",
+  darkMode: false,
   theme: {
     extend: {
       colors: {
@@ -9,6 +9,7 @@ module.exports = {
           light: "white",
           grey: "#F0F0F0",
           base: "#880064",
+          baseDark: "#68004c",
         },
       },
     },

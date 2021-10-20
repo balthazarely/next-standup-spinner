@@ -8,9 +8,9 @@ export const SpinnerBtn = ({ nextButtonClick }: NextButtonProps) => {
   return (
     <div
       onClick={nextButtonClick}
-      className=" bg-blue-500 text-white px-4 py-2 text-center cursor-pointer text-lg w-28 rounded-md "
+      className=" bg-tonic-base hover:bg-tonic-baseDark  text-white px-4 py-2  cursor-pointer text-sm h-12 flex items-center justify-center   w-full "
     >
-      Spin
+      WHO'S UP NEXT?
     </div>
   );
 };

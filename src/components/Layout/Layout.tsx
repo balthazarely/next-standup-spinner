@@ -6,7 +6,7 @@ interface LayoutProps {
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className=" dark:bg-tonic-dark bg-tonic-light w-full h-screen transition-all duration-200">
+    <div className=" bg-tonic-dark h-screen transition-all duration-200">
       {children}
     </div>
   );
