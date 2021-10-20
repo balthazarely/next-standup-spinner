@@ -82,7 +82,7 @@ export const SpinnerWrapper = () => {
 
   async function getPeople() {
     let response = await axios.get<any>(
-      "http://wheelofstandup-api-dev.azurewebsites.net" + "/People"
+      "https://wheelofstandup-api-dev.azurewebsites.net" + "/People"
     );
 
     let people = await response.data
