@@ -10,14 +10,14 @@ export const Navbar = () => {
     <div className="w-100 h-20  dark:bg-tonic-light bg-tonic-grey transition-all duration-200 ">
       <div className="container mx-auto flex justify-between px-4 ">
         <div className="logo text-black w-24 pt-5 cursor-pointer">
-          <Link href="/spinner">
+          <Link href="/">
             <div>
               <img src="/tonic-logo.png" alt="tonic__logo" />
             </div>
           </Link>
         </div>
         <div className="flex gap-2 mb-1 items-center text-tonic-base">
-          <Link href="/spinner">
+          <Link href="/">
             <div>
               <div className="text-tonic-base hover:text-tonic-baseLight text-xl font-bold cursor-pointer">
                 Spinner
