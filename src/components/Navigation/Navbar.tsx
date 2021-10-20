@@ -12,12 +12,7 @@ export const Navbar = () => {
         <div className="logo text-black w-24 pt-5 cursor-pointer">
           <Link href="/spinner">
             <div>
-              <Image
-                src="/tonic-logo.png"
-                alt="tonic__logo"
-                width={500}
-                height={500}
-              />
+              <img src="/tonic-logo.png" alt="tonic__logo" />
             </div>
           </Link>
         </div>
