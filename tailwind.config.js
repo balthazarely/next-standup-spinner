@@ -8,6 +8,7 @@ module.exports = {
           dark: "#282E44",
           light: "white",
           grey: "#F0F0F0",
+          tonicGray: "#333d5e",
           base: "#880064",
           baseDark: "#68004c",
           baseLight: "#b20082",

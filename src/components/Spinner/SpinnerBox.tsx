@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const boxDimensions = {
   width: "250px",
-  height: "50px",
+  height: "40px",
 };
 
 interface SpinnerBoxProps {

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { NextPage } from "next";
-import { PageWrapper } from "../src/components/Layout/PageWrapper";
+import { GlobalContext } from "../../context/SettingsContext";
 
-const Settings: NextPage = () => {
+export const Modal = () => {
+  const { modalOpen, openModal, closeModal } = React.useContext(GlobalContext);
+
   const [state, setState] = useState({
     spinnerSpped: "10",
     spinnerDuration: "1",
@@ -31,14 +32,14 @@ const Settings: NextPage = () => {
     } else {
       localStorage.setItem("TonicSpinnerSettings", JSON.stringify(state));
     }
-  }, []);
+  }, [modalOpen]);
 
   useEffect(() => {
     localStorage.setItem("TonicSpinnerSettings", JSON.stringify(state));
   }, [state.spinnerSpped, state.spinnerDuration, state.ease]);
 
   return (
-    <PageWrapper>
+    <div className="modal-box text-white">
       <div className="text-4xl">Settings</div>
       <div className="settings__container mt-10">
         <div className="mb-4 flex items-center ">
@@ -82,8 +83,11 @@ const Settings: NextPage = () => {
           </select>
         </div>
       </div>
-    </PageWrapper>
+      <div className="modal-action">
+        <label htmlFor="my-modal-2" className="btn" onClick={closeModal}>
+          Close
+        </label>
+      </div>
+    </div>
   );
 };
-
-export default Settings;

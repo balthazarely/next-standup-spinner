@@ -5,8 +5,8 @@ import { SpinnerTarget } from "./SpinnerTarget";
 
 const spinnerDimensions = {
   width: "250px",
-  height: "650px",
-  marginTop: " -100px",
+  height: "520px",
+  marginTop: " -80px",
 };
 
 interface SpinnerProps {

@@ -10,17 +10,17 @@ export const calculateSpinnerDistance = (
   let selectedNamePosition = staticNameArray.indexOf(selectedName);
   let distanceToTravel = currentNamePosition - selectedNamePosition;
   if (distanceToTravel === 0) {
-    return staticNameArray.length * 50 * rotations;
+    return staticNameArray.length * 40 * rotations;
   }
   if (distanceToTravel < 0) {
     return Math.abs(
-      (distanceToTravel + staticNameArray.length) * 50 +
-        staticNameArray.length * 50 * rotations
+      (distanceToTravel + staticNameArray.length) * 40 +
+        staticNameArray.length * 40 * rotations
     );
   }
   if (distanceToTravel > 0) {
     return Math.abs(
-      distanceToTravel * 50 + staticNameArray.length * 50 * rotations
+      distanceToTravel * 40 + staticNameArray.length * 40 * rotations
     );
   }
 };
@@ -59,7 +59,7 @@ export const calcMultiplier = (arr: any[]) => {
 export const duplicateArr = (arr: any[]) => {
   // let times = calcMultiplier(arr);
   // TODO: toggle this back
-  let times = 2;
+  let times = 15;
   return Array(times)
     .fill([...arr])
     .reduce((a, b) => a.concat(b));

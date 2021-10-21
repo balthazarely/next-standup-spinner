@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import DarkModeBtn from "../../hooks/useDarkMode";
 import Link from "next/link";
 import Image from "next/image";
 
 import { HiOutlineCog, HiOutlineShare } from "react-icons/hi";
+import { Modal } from "../Modal/Modal";
+import { GlobalContext } from "../../context/SettingsContext";
 
 export const Navbar = () => {
+  const { modalOpen, openModal } = React.useContext(GlobalContext);
+
   return (
     <div className="w-100 h-20  dark:bg-tonic-light bg-tonic-grey transition-all duration-200 ">
       <div className="container mx-auto flex justify-between px-4 ">
@@ -24,13 +28,28 @@ export const Navbar = () => {
               </div>
             </div>
           </Link>
+          <Link href="/people">
+            <div>
+              <div className="text-tonic-base hover:text-tonic-baseLight text-xl font-bold cursor-pointer">
+                Lineup
+              </div>
+            </div>
+          </Link>
           <HiOutlineShare className="text-tonic-base  hover:text-tonic-baseLight  text-3xl cursor-pointer " />
-          <Link href="/settings">
+          {/* <Link href="/settings">
             <div>
               <HiOutlineCog className="text-tonic-base  hover:text-tonic-baseLight  text-3xl cursor-pointer" />
             </div>
-          </Link>
+          </Link> */}
           {/* <DarkModeBtn /> */}
+
+          <HiOutlineCog
+            className="text-tonic-base  hover:text-tonic-baseLight  text-3xl cursor-pointer"
+            onClick={openModal}
+          />
+          <div className={`modal ${modalOpen ? "modal-open" : ""}`}>
+            {modalOpen && <Modal />}
+          </div>
         </div>
       </div>
     </div>
