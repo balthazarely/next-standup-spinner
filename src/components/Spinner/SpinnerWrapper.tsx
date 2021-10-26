@@ -22,7 +22,7 @@ export const SpinnerWrapper = () => {
   const [whoHasGoneArray, setWhoHasGoneArray] = useState<string[]>([]);
 
   // Game Variables
-  const [rotations, setRotations] = useState<number>(10);
+  const [rotations, setRotations] = useState<number>(2);
   const [duration, setDuration] = useState<number>(2);
   const [ease, setEase] = useState<string>("power4.inOut");
   const [currentName, setCurrentName] = useState<string | undefined>();
@@ -118,7 +118,7 @@ export const SpinnerWrapper = () => {
       let parsedSettings = JSON.parse(settings);
       if (parsedSettings.spinnerDuration) {
         setDuration(Number(parsedSettings.spinnerDuration));
-        setRotations(Number(parsedSettings.spinnerSpped));
+        // setRotations(Number(parsedSettings.spinnerSpped));
         setEase(parsedSettings.ease[0]);
       }
     }

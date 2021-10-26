@@ -42,7 +42,7 @@ export const Modal = () => {
     <div className="modal-box text-white">
       <div className="text-4xl">Settings</div>
       <div className="settings__container mt-10">
-        <div className="mb-4 flex items-center ">
+        {/* <div className="mb-4 flex items-center ">
           <div className="text-gray-300 w-32 ">Spinner Speed</div>
           <select
             value={state.spinnerSpped}
@@ -55,7 +55,7 @@ export const Modal = () => {
             <option value="20">20</option>
             <option value="30">30</option>
           </select>
-        </div>
+        </div> */}
         <div className="flex mb-4 items-center">
           <div className="text-gray-300  w-32 ">Spinner Duration</div>
           <select

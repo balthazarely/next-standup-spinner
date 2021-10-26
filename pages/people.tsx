@@ -6,7 +6,8 @@ import { HiXCircle } from "react-icons/hi";
 
 const People: NextPage = () => {
   const [people, setPeople] = useState<string[]>([]);
-  const [newPerson, setNewPerson] = useState<string>();
+  const [newPerson, setNewPerson] = useState<string>("");
+  const [showError, setShowError] = useState<boolean>(false);
 
   const fetchPeople = () => {
     const savedPeople = localStorage.getItem("savedNameArray");
@@ -32,19 +33,30 @@ const People: NextPage = () => {
   const resetName = () => {
     localStorage.removeItem("savedNameArray");
     fetchPeople();
+    setShowError(false);
   };
 
   const clearNames = () => {
     setPeople([]);
+    setShowError(false);
     localStorage.setItem("savedNameArray", JSON.stringify([]));
   };
 
-  const handleKeyDown = (e: any) => {
+  const addName = (e: any) => {
     if (e.key === "Enter") {
-      let newArray = [...people, e.target.value];
-      setPeople(newArray);
-      localStorage.setItem("savedNameArray", JSON.stringify(newArray));
-      setNewPerson("");
+      if (e.target.value === "") {
+        return;
+      } else if (people.includes(e.target.value)) {
+        console.log("please use a unique name");
+        setShowError(true);
+        return;
+      } else {
+        setShowError(false);
+        let newArray = [...people, e.target.value];
+        setPeople(newArray);
+        localStorage.setItem("savedNameArray", JSON.stringify(newArray));
+        setNewPerson("");
+      }
     }
   };
 
@@ -52,8 +64,8 @@ const People: NextPage = () => {
     <PageWrapper>
       <div className="flex gap-3 flex-col md:flex-row">
         <div className="flex-1 flex flex-wrap    ">
-          {people.map((name) => (
-            <div key={name} className=" relative">
+          {people.map((name, i) => (
+            <div key={i} className=" relative">
               <div className="top-0 right-0 absolute">
                 <HiXCircle
                   onClick={() => removeName(name)}
@@ -66,7 +78,7 @@ const People: NextPage = () => {
             </div>
           ))}
         </div>
-        <div className="flex-1 flex-col flex ">
+        <div className="flex-1 flex-col flex">
           <div className="text-2xl text-gray-300">Add a Person</div>
           <input
             type="text"
@@ -74,8 +86,11 @@ const People: NextPage = () => {
             className="input w-72 mt-2"
             value={newPerson}
             onInput={(e: any) => setNewPerson(e.target.value)}
-            onKeyDown={(e: any) => handleKeyDown(e)}
+            onKeyDown={(e: any) => addName(e)}
           />
+          <div className="warning text-red-300 h-6 mt-2">
+            {showError ? "This name already exisits" : ""}
+          </div>
           <div className="flex gap-3 mt-2">
             <button
               onClick={resetName}
